@@ -25,6 +25,11 @@ var planningPlan = function(nodes, sourceUUID, destinationUUID)
 	var newPrice = 0;
 	var plannedPath = [];
 	
+	if(network.sourceUUID(nodes, sourceUUID) == -1 || network.sourceUUID(nodes, destinationUUID) == -1)
+	{
+		return [];
+	}
+	
 	// initialization
 	nodes.forEach(function(value, key, array)
 	{
